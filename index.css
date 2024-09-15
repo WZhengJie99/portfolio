@@ -1,0 +1,431 @@
+/* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    color: red;
+}
+
+/* Container that holds both main content and wheel */
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: max-height 0.3s ease-in-out;
+    position: relative;
+}
+
+.icon {
+    width: 3.5%;
+    height: 3.5%;
+    margin-bottom: -0.5%;
+}
+
+#project-info a {
+    color: #000;
+    text-decoration: none;
+}
+
+#project-info a:hover {
+    text-decoration: underline;
+}
+
+.ping-me {
+    font-weight: bold;
+}
+
+.wheel-container {
+    position: relative;
+    width: 60%;
+    height: auto;
+    background-color: #333;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: background-color 0.5s ease;
+    padding: 20px 0;
+}
+
+/* New class for active project */
+.wheel-container.active-project2 {
+    background-color: #212121;
+}
+.wheel-container.active-project3 {
+    background-color: black;
+}
+.wheel-container.active-project4 { 
+    background-color: rgb(13, 16, 23);
+}
+.wheel-container.active-project5 {
+    background-color: rgb(104, 219, 238);
+}
+
+/* Wheel styling */
+.wheel {
+    position: relative;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+    margin-right: -800px;
+}
+
+/* Wheel segments styling */
+.wheel-segment {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    transform-origin: center center;
+    padding-left: 400px;
+}
+
+#proj-dets {
+    color: #fff;
+}
+
+/* Ensure text inside segments is upright */
+.wheel-segment span {
+    display: block;
+    transform: rotate(-180deg); /* Counter-rotate by the same amount to keep text upright */
+}
+/* Image styling */
+.proj-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding-bottom: 1%;
+}
+
+/* Overlay text styling */
+.overlay-text {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    padding-left: 5%;
+    padding-right: 15%;
+}
+
+.pin {
+    position: absolute;
+    font-size: 900%;
+    left: 95%;
+    top: -30%;
+}
+
+.pin a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pin a:hover {
+    transform: scale(1.5);
+}
+
+
+/* Positioning each segment to make the wheel effect */
+.wheel-segment:nth-child(1) {
+    transform: rotate(216deg) translateX(600px);
+}
+
+.wheel-segment:nth-child(2) {
+    transform: rotate(288deg) translateX(600px);
+}
+
+.wheel-segment:nth-child(3) {
+    transform: rotate(360deg) translateX(600px);
+}
+
+.wheel-segment:nth-child(4) {
+    transform: rotate(72deg) translateX(600px);
+}
+
+.wheel-segment:nth-child(5) {
+    transform: rotate(144deg) translateX(600px);
+}
+
+.toggle-paragraph {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #333;
+    font-size: 16px;
+    text-align: left;
+    margin-top: 0px;
+    padding: 30px;
+    padding-top: 90px;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: auto;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 3000;
+}
+
+.button-container {
+    display: flex; /* Align children in a row */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 20px; /* Space between buttons (adjust as needed) */
+}
+
+/* -------------------------------------------------------------button 10----------------------------------------------------- */
+
+.Mahekjain-btn-1 {
+    font-size: x-small;
+}
+
+.Mahekjain-btn-1 a {
+    position: relative;
+    display: inline-block;
+    padding: 25px 15px;
+    margin: 40px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.Mahekjain-btn-1 a:hover {
+    background: #ffffff;
+    color: #050801;
+    box-shadow: 0 0 5px #ffffff, 0 0 25px #ffffff, 0 0 50px #ffffff,
+        0 0 200px #ffffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.Mahekjain-btn-2 {
+    font-size: x-small;
+}
+
+.Mahekjain-btn-2 a {
+    position: relative;
+    display: inline-block;
+    padding: 25px 15px;
+    margin: 40px 0;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+
+.Mahekjain-btn-2 a:hover {
+    background: #ffffff;
+    color: #050801;
+    box-shadow: 0 0 5px #ffffff, 0 0 25px #ffffff, 0 0 50px #ffffff,
+        0 0 200px #ffffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* -------------------------------------------------------------end of button 10----------------------------------------------------- */
+/* Balloon container */
+#balloon-container {
+    position: fixed; /* Fix the container to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    z-index: 4000; /* Ensure it's above other content */
+    overflow: hidden; /* Hide any balloons moving out of bounds */
+    pointer-events: none; /* Prevent interaction with balloons */
+}
+
+/* Balloon style */
+.balloon {
+    position: absolute;
+    bottom: -70px; /* Start below the screen */
+}
+
+/* Balloon floating animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh); /* Float 300% above the screen */
+    }
+}
+
+/* Styles for shooting stars */
+#star-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), red);
+    border-radius: 50%;
+    opacity: 0;
+    transform: rotate(45deg);
+    animation: shooting 4s ease-out forwards;
+}
+
+@keyframes shooting {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-100vw, 100vh) rotate(45deg);
+    }
+}
+
+/* Media Queries for mobile devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: x-large;
+    }
+    .container {
+        flex-direction: column;
+        position: relative;
+    }
+
+    .main-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        z-index: 2000;
+        overflow: hidden;
+    }
+
+    .main-content.active {
+        max-height: 100%;
+        opacity: 1;
+        overflow: auto;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: red;
+    }
+
+    .wheel-container {
+        width: 100%;
+        height: 100%;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .wheel {
+        position: relative;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 100%;
+        border: 4px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 1s ease;
+        margin-right: -1300px;
+    }
+
+    .proj-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .wheel-segment {
+        position: absolute;
+        width: 35%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        cursor: pointer;
+        transition: background-color 0.5s;
+        transform-origin: center center;
+        padding-right: 290px;
+    }
+
+    .overlay-text {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .icon {
+        width: 4.5%;
+        height: 4.5%;
+        margin-bottom: -0.5%;
+    }
+}
