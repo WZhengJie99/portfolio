@@ -8,10 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'Project 2' },
         { title: 'Project 3' },
         { title: 'Project 4' },
-        { title: 'Project 5' }
+        { title: 'Project 5' },
+        { title: 'Project 6' }
     ];
 
-    let currentRotation = -36;
+    let currentRotation = 0;
     wheel.style.transform = `rotate(${currentRotation}deg)`;
 
     function getNextSegmentIndex(currentIndex, direction) {
@@ -25,27 +26,38 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function updateActiveProject(rotation) {
         //const roundedRotation = Math.round(rotation);
-        if (rotation === -108) {
-            wheelContainer.classList.remove('active-project3');
-            wheelContainer.classList.remove('active-project4');
-            wheelContainer.classList.remove('active-project5')
-            wheelContainer.classList.add('active-project2');
-        } else if (rotation === -180) {
+        if (rotation === -60) {
+            // Vehfare
             wheelContainer.classList.remove('active-project2');
             wheelContainer.classList.remove('active-project4');
             wheelContainer.classList.remove('active-project5')
             wheelContainer.classList.add('active-project3');
-        } else if (rotation === -252) {
+        } else if (rotation === -120) {
+            // SHIM
             wheelContainer.classList.remove('active-project2');
             wheelContainer.classList.remove('active-project3');
             wheelContainer.classList.remove('active-project5');
             wheelContainer.classList.add('active-project4');
-        } else if (rotation === -324) {
+        } else if (rotation === -180) {
+            // Music Box
+            wheelContainer.classList.remove('active-project3');
+            wheelContainer.classList.remove('active-project4');
+            wheelContainer.classList.remove('active-project5')
+            wheelContainer.classList.add('active-project2');
+        } else if (rotation === -240) {
+            // Fishing
+            wheelContainer.classList.remove('active-project2');
+            wheelContainer.classList.remove('active-project4');
+            wheelContainer.classList.remove('active-project5')
+            wheelContainer.classList.add('active-project3');
+        } else if (rotation === -300) {
+            // Tile Breaker
             wheelContainer.classList.remove('active-project2');
             wheelContainer.classList.remove('active-project4');
             wheelContainer.classList.remove('active-project3');
             wheelContainer.classList.add('active-project5');
         } else {
+            // Scroll down for more! / default
             wheelContainer.classList.remove('active-project2');
             wheelContainer.classList.remove('active-project3');
             wheelContainer.classList.remove('active-project4');
@@ -55,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('wheel', (event) => {
         const direction = event.deltaY > 0 ? 'up' : 'down';
-        const currentSegmentIndex = Math.abs(currentRotation / 72) % projects.length;
+        const currentSegmentIndex = Math.abs(currentRotation / 60) % projects.length;
         const nextSegmentIndex = getNextSegmentIndex(currentSegmentIndex, direction);
 
         currentRotation = calculateRotationAngle(nextSegmentIndex);
@@ -65,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function calculateRotationAngle(index) {
-        return -72 * index;
+        return -60 * index;
     }
 
     const menuToggle = document.querySelector('.menu-toggle');

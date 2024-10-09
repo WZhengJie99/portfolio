@@ -161,23 +161,27 @@ h1 {
 
 /* Positioning each segment to make the wheel effect */
 .wheel-segment:nth-child(1) {
-    transform: rotate(216deg) translateX(600px);
+    transform: rotate(180deg) translateX(600px);
 }
 
 .wheel-segment:nth-child(2) {
-    transform: rotate(288deg) translateX(600px);
+    transform: rotate(240deg) translateX(600px);
 }
 
 .wheel-segment:nth-child(3) {
-    transform: rotate(360deg) translateX(600px);
+    transform: rotate(300deg) translateX(600px);
 }
 
 .wheel-segment:nth-child(4) {
-    transform: rotate(72deg) translateX(600px);
+    transform: rotate(360deg) translateX(600px);
 }
 
 .wheel-segment:nth-child(5) {
-    transform: rotate(144deg) translateX(600px);
+    transform: rotate(60deg) translateX(600px);
+}
+
+.wheel-segment:nth-child(6) {
+    transform: rotate(120deg) translateX(600px);
 }
 
 .toggle-paragraph {
