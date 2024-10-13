@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wong Zheng Jie</title>
+    <title>Wong Zheng Jie Portfolio</title>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <div class="container">
         <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-        <p class="toggle-paragraph">- You would think that there would be more items hiding inside this nav menu, but really, there isn't.</p>
+        <div class="toggle-paragraph">
+            <p class="toggle-chat">- Chat</p>
+            <p class="ComingSoon">- Coming Soon</p>
+        </div>
+
+        <div class="nav-stats">
+            <div id="ch-switch">
+                <div id="logo-switch" class="switch">
+                    <img src="assets/logoSwitch3.png" class="letter" id="logo-switch">
+                    <img src="assets/overlay.png" class="overlay switch-overlay">
+                    <img src="assets/overlay2.png" class="overlay switch-overlay">
+                </div>
+            </div>
+
+            <span id="SGT">SGT: 0</span>
+            <span id="fps">FPS: 0</span>
+
+            <div class="ch-logo">
+                <div id="wa-logo">
+                    <img src="assets/wa3.png" class="letter" id="logo-wa1">
+                    <img src="assets/overlay.png" class="overlay wa-overlay">
+                    <img src="assets/overlay2.png" class="overlay wa-overlay">
+                </div>
+    
+                <div id="zh-logo">
+                    <img src="assets/zh2.png" class="letter" id="logo-zh1">
+                    <img src="assets/overlay.png" class="overlay zh-overlay">
+                    <img src="assets/overlay2.png" class="overlay zh-overlay">
+                </div>
+    
+                <div id="jie-logo">
+                    <img src="assets/jie1.png" class="letter" id="logo-jie1">
+                    <img src="assets/overlay.png" class="overlay jie-overlay">
+                    <img src="assets/overlay2.png" class="overlay jie-overlay">
+                </div>
+            </div>
+        </div>
+
         <div class="main-content">
             <div id="project-info">
                 <h1></h1>
@@ -17,29 +56,52 @@
                 <h3>I'm a computer science student,</h3>
                 <h3>and these are some projects that I have worked on.</h3>
                 <br>
-                <h2 class="ping-me">Ping me!</h2>
+                <h2>Ping me!</h2>
                 <p>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" class="icon"/>
-                  <span class="ping-me">GitHub</span>: <a href="https://github.com/WZhengJie99" id="proj-dets">WZhengJie99</a></p>
-                <p><span class="ping-me">✉ Gmail</span>: <a href="wzhengjie99@gmail.com" id="proj-dets">wzhengjie99@gmail.com</a></p>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                        class="icon" />
+                    <span class="ping-me">GitHub</span>: <a href="https://github.com/WZhengJie99"
+                        id="proj-dets">WZhengJie99</a>
+                </p>
+                <p><span class="ping-me">✉ Gmail</span>: <a href="wzhengjie99@gmail.com"
+                        id="proj-dets">wzhengjie99@gmail.com</a></p>
                 <p>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg" class="icon" />
-                  : <a href="https://twitter.com/WZJ_99_" id="proj-dets">WZJ_99_</a></p>
-                  <p><span class="ping-me">Resume</span>: <a href="assets/Wong%20Zheng%20Jie%20Resume.pdf" download="Wong Zheng Jie Resume.pdf" id="proj-dets">Wong Zheng Jie Resume.pdf</a></p>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg"
+                        class="icon" />
+                    : <a href="https://twitter.com/WZJ_99_" id="proj-dets">WZJ_99_</a>
+                </p>
+                <p><span class="ping-me">Resume</span>: <a href="assets/Wong%20Zheng%20Jie%20Resume.pdf"
+                        download="Wong Zheng Jie Resume.pdf" id="proj-dets">Wong Zheng Jie Resume.pdf</a></p>
+
+                <footer class="footer">
+                    <p>&copy; 2024 Wong Zheng Jie. All rights reserved.</p>
+                </footer>
             </div>
         </div>
+
+        <!-- Hidden Chatbox that will expand on button click -->
+        <div id="e-chatbox-container">
+            <p id="e-chatbox-text">CHAT</p>
+            <button class="e-close-chatbox">X</button>
+            <iframe src="https://p-chatbox.onrender.com/" id="e-chatbox-iframe"></iframe>
+        </div>
+
         <div class="wheel-container">
             <div class="wheel">
                 <div class="wheel-segment" data-project="1">
                     <span>
                         <div class="overlay-text">
                             <h3>Scroll down for more!</h3>
-                            <p>I am currently enrolled under Singapore Institute of Management (SIM) x University of London (UOL), BSc Computer Science course. I have a passion for code and documentation, and would like to work on more projects! Visit GitHub for my project repo's (inserts semi-colon closing paranthesis)</p>
+                            <p>Currently enrolled under Singapore Institute of Management (SIM) x University of London
+                                (UOL), BSc Computer Science course. My favourite language is JavaScript. I like
+                                coding random stuff and have a passion for documentation.
+                                
+                                <br>PS.this site is best viewed on PC. (inserts semi-colon closing paranthesis)</p>
                             <p class="pin"><a href="https://maps.app.goo.gl/aAnNHzCi1uP6XyLo6">📍</a></p>
 
                             <!-- button starts here -->
-                             <!-- button created by Mahek jain, https://github.com/Mahekjain2706 -->
-                             <div class="button-container">
+                            <!-- button created by Mahek jain, https://github.com/Mahekjain2706 -->
+                            <div class="button-container">
                                 <div class="Mahekjain-btn-1">
                                     <a href="#">
                                         Shooting stars!
@@ -52,6 +114,17 @@
                                 </div>
                             </div>
                             <!-- button end here -->
+
+                            <!-- Chatbox -->
+                            <div id="chatbox-container">
+                                <p id="chatbox-text">CHAT</p>
+                                <div id="whitecat-container">
+                                    <img src="assets/whitecat1.2.gif" id="whitecat1" class="e-expand-chatbox">
+                                    <p id="expand-text" class="e-expand-chatbox-text">EXP</p>
+                                </div>
+                                <iframe src="https://p-chatbox.onrender.com/" id="chatbox-iframe"></iframe>
+                            </div>
+
                         </div>
                     </span>
                 </div>
@@ -59,9 +132,12 @@
                     <span>
                         <div class="overlay-text">
                             <h3>Vehfare</h3>
-                            <p>The Vehfare project showcases a webpage design using Tailwind CSS for a fictitious automotive e-commerce platform dedicated to delivering cutting-edge cyberpunk vehicles that push the boundaries of innovation.</p>
+                            <p>The Vehfare project showcases a webpage design using Tailwind CSS for a fictitious
+                                automotive e-commerce platform dedicated to delivering cutting-edge cyberpunk vehicles
+                                that push the boundaries of innovation.</p>
                             <img src="assets/Vehfare.png" alt="Music Box Audio Visualization" class="proj-img">
-                            <p><a href="https://wzhengjie99.github.io/Vehfare/" id="proj-dets">https://wzhengjie99.github.io/Vehfare/</a></p>
+                            <p><a href="https://wzhengjie99.github.io/Vehfare/"
+                                    id="proj-dets">https://wzhengjie99.github.io/Vehfare/</a></p>
                         </div>
                     </span>
                 </div>
@@ -69,9 +145,14 @@
                     <span>
                         <div class="overlay-text">
                             <h3>Smart Home Inventory Manager (SHIM)</h3>
-                            <p>SHIM, or Smart Home Inventory Manager, is a tool for homeowners to efficiently keep track of and find household inventory items. Leading a team of 4 other members, we developed an API, a website, a mobile application, and a Telegram bot that utilizes <a href="https://spacy.io/" id="proj-dets">spaCy</a> for natural language processing (NLP) as an inference engine.</p>
+                            <p>SHIM, or Smart Home Inventory Manager, is a tool for homeowners to efficiently keep track
+                                of and find household inventory items. Leading a team of 4 other members, we developed
+                                an API, a website, a mobile application, and a Telegram bot that utilizes <a
+                                    href="https://spacy.io/" id="proj-dets">spaCy</a> for natural language processing
+                                (NLP) as an inference engine.</p>
                             <img src="assets/SHIM-homepage.png" alt="SHIM-homepage" class="proj-img">
-                            <p>🏠︎ <a href="https://shim-web.vercel.app/" id="proj-dets">https://shim-web.vercel.app/</a></p>
+                            <p>🏠︎ <a href="https://shim-web.vercel.app/"
+                                    id="proj-dets">https://shim-web.vercel.app/</a></p>
                         </div>
                     </span>
                 </div>
@@ -79,9 +160,14 @@
                     <span>
                         <div class="overlay-text">
                             <h3>Music Box Audio Visualization</h3>
-                            <p>This project is an audio visualization created primarily with p5.js. It features a music box in the center of the application that vibrates according to the bass frequencies of the music, while particle notes are generated in response to the treble frequencies. Users can customize the visualizations using the provided GUI controls.</p>
-                            <img src="assets/Music-Box-Audio-Visualization.png" alt="Music Box Audio Visualization" class="proj-img">
-                            <p>♪ <a href="https://wzhengjie99.github.io/Music-Box-Audio-Visualization/" id="proj-dets">https://wzhengjie99.github.io/Music-Box-Audio-Visualization/</a></p>
+                            <p>This project is an audio visualization created primarily with p5.js. It features a music
+                                box in the center of the application that vibrates according to the bass frequencies of
+                                the music, while particle notes are generated in response to the treble frequencies.
+                                Users can customize the visualizations using the provided GUI controls.</p>
+                            <img src="assets/Music-Box-Audio-Visualization.png" alt="Music Box Audio Visualization"
+                                class="proj-img">
+                            <p>♪ <a href="https://wzhengjie99.github.io/Music-Box-Audio-Visualization/"
+                                    id="proj-dets">https://wzhengjie99.github.io/Music-Box-Audio-Visualization/</a></p>
                         </div>
                     </span>
                 </div>
@@ -89,29 +175,39 @@
                     <span>
                         <div class="overlay-text">
                             <h3>Fishing</h3>
-                            <p>Motivated by fishing in classic Pokemon games, visitors 'fish' while a custom background with animated sea creatures fill the screen overtime.</p>
-                            <img src="assets/Fishing-for-102-secs.png" alt="You have been fishing for 102 secs" class="proj-img">
-                            <p>🐟 <a href="https://wzhengjie99.github.io/Fishing/" id="proj-dets">https://wzhengjie99.github.io/Fishing/</a></p>
+                            <p>Motivated by fishing in classic Pokemon games, visitors 'fish' while a custom background
+                                with animated sea creatures fill the screen overtime.</p>
+                            <img src="assets/Fishing-for-102-secs.png" alt="You have been fishing for 102 secs"
+                                class="proj-img">
+                            <p>🐟 <a href="https://wzhengjie99.github.io/Fishing/"
+                                    id="proj-dets">https://wzhengjie99.github.io/Fishing/</a></p>
                         </div>
                     </span>
                 </div>
-                
+
                 <div class="wheel-segment" data-project="6">
                     <span>
                         <div class="overlay-text">
                             <h3>Tile Breaker</h3>
-                            <p>Inspired by <a href="https://tholman.com/" id="proj-dets">the curious creations of Tim Holman's</a> <a href="https://theuselessweb.com/" id="proj-dets">Useless Website</a>, I attempted to make one where 'tiles' are being broken into more 'tiles' when touched.</p>
-                            <img src="assets/tile-breaker.png" alt="Unbroken tiles image is supposed to be here" class="proj-img">
-                            <p>🟦 <a href="https://wzhengjie99.github.io/Tile-Breaker/" id="proj-dets">https://wzhengjie99.github.io/Tile-Breaker/</a></p>
+                            <p>Inspired by <a href="https://tholman.com/" id="proj-dets">the curious creations of Tim
+                                    Holman's</a> <a href="https://theuselessweb.com/" id="proj-dets">Useless
+                                    Website</a>, I attempted to make one where 'tiles' are being broken into more
+                                'tiles' when touched.</p>
+                            <img src="assets/tile-breaker.png" alt="Unbroken tiles image is supposed to be here"
+                                class="proj-img">
+                            <p>🟦 <a href="https://wzhengjie99.github.io/Tile-Breaker/"
+                                    id="proj-dets">https://wzhengjie99.github.io/Tile-Breaker/</a></p>
                         </div>
                     </span>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <div id="balloon-container"></div>
     <div id="star-container"></div>
+
     <script src="index.js"></script>
 </body>
+
 </html>
