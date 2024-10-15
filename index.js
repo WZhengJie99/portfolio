@@ -390,22 +390,4 @@ document.addEventListener('DOMContentLoaded', function () {
         const chatbox = document.getElementById('e-chatbox-container');
         chatbox.classList.toggle('expanded');
     }
-
-    var switchOn = false;  // Set initial state to off
-    var intervalId = null; // To store the interval ID for toggling
-
-    document.querySelector('.switch').addEventListener('click', function () {
-        switchOn = !switchOn;
-
-        if (switchOn) {
-            // Start toggling between overlay1 and overlay2
-            intervalId = setInterval(toggleOverlays, 1000); // Toggle every second
-        } else {
-            // Stop toggling and hide both overlays
-            clearInterval(intervalId);
-            document.getElementById('overlay1').classList.add('hidden');
-            document.getElementById('overlay2').classList.add('hidden');
-        }
-    });
-
 });

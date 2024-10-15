@@ -96,8 +96,8 @@
                                 (UOL), BSc Computer Science course. My favourite language is JavaScript. I like
                                 coding random stuff and have a passion for documentation.
                                 
-                                <br>PS.this site is best viewed on PC. (inserts semi-colon closing paranthesis)</p>
-                            <p class="pin"><a href="https://maps.app.goo.gl/aAnNHzCi1uP6XyLo6">📍</a></p>
+                                <br>PS.this site is best viewed on a 1440 x 900 resolution. (inserts semi-colon closing paranthesis)</p>
+                            <p class="pin"><a href="https://maps.app.goo.gl/aAnNHzCi1uP6XyLo6"><img src="assets/pin.png"></a></p>
 
                             <!-- button starts here -->
                             <!-- button created by Mahek jain, https://github.com/Mahekjain2706 -->
@@ -208,6 +208,17 @@
     <div id="star-container"></div>
 
     <script src="index.js"></script>
+    <script>
+        if (window.innerWidth > 768) {
+          const script = document.createElement("script");
+          script.src = "./public/oneko.js";
+          document.body.appendChild(script);
+      
+          const script2 = document.createElement("script");
+          script2.src = "./public/onekoTwo.js";
+          document.body.appendChild(script2);
+        }
+      </script>
 </body>
 
 </html>
