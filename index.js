@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let menuOpen = false;
 
     window.onload = function () {
-        var switchOn = true;
+        var chswitchOn = true;
 
         // Brighten the logos
         document.getElementById('logo-wa1').classList.add('brighter');
@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         document.querySelector('.switch').addEventListener('click', function () {
-            switchOn = !switchOn;
+            chswitchOn = !chswitchOn;
 
-            if (switchOn) {
+            if (chswitchOn) {
                 document.getElementById('logo-wa1').classList.add('brighter');
                 document.getElementById('logo-zh1').classList.add('brighter');
                 document.getElementById('logo-jie1').classList.add('brighter');
@@ -55,6 +55,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('logo-switch').classList.add('dim');
 
                 document.querySelectorAll('.wa-overlay, .zh-overlay, .jie-overlay, .switch-overlay').forEach(function (overlay) {
+                    overlay.classList.remove('flicker', 'brighter');
+                    overlay.classList.add('dim');
+                });
+            }
+        });
+
+        var mswitchOn = true;
+
+        document.getElementById('marquee-switch').classList.add('brighter');
+
+        // Flicker the overlays
+        document.querySelectorAll('.marquee-s-overlay').forEach(function (overlay) {
+            overlay.classList.add('flicker', 'brighter');
+        });
+
+        document.querySelector('.marq-switch').addEventListener('click', function () {
+            mswitchOn = !mswitchOn;
+
+            if (mswitchOn) {
+                document.getElementById('marquee-switch').classList.add('brighter');
+                document.getElementById('marquee-switch').classList.remove('dim');
+                
+                document.getElementById('marquee-text').classList.add('brighter');
+                document.getElementById('marquee-text').classList.remove('marquee-dim');
+
+                document.querySelectorAll('.marquee-s-overlay').forEach(function (overlay) {
+                    overlay.classList.add('flicker', 'brighter');
+                    overlay.classList.remove('dim');
+                });
+            } else {
+                document.getElementById('marquee-switch').classList.remove('brighter');
+                document.getElementById('marquee-switch').classList.add('dim');
+                
+                document.getElementById('marquee-text').classList.remove('brighter');
+                document.getElementById('marquee-text').classList.add('marquee-dim');
+
+                document.querySelectorAll('.marquee-s-overlay').forEach(function (overlay) {
                     overlay.classList.remove('flicker', 'brighter');
                     overlay.classList.add('dim');
                 });

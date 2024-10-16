@@ -10,43 +10,66 @@
 
 <body>
     <div class="container">
+
         <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+
         <div class="toggle-paragraph">
-            <p class="toggle-chat">- Chat</p>
-            <p class="ComingSoon">- Coming Soon</p>
+
+            <div class="nav-links">
+                <p class="toggle-chat">- Chat</p>
+                <p class="ComingSoon">- Coming Soon</p>
+            </div>
+
+
+
+            <div class="menu-images">
+                <img src="assets/BusStopFull_3.3.png" alt="Bus-Stop" id="busstop">
+
+                <div id="marquee-switch">
+                    <div class="marq-switch">
+                        <img src="assets/logoSwitch3.png" id="marquee-switch">
+                        <img src="assets/overlay.png" class="overlay marquee-s-overlay">
+                        <img src="assets/overlay2.png" class="overlay marquee-s-overlay">
+                    </div>
+                </div>
+
+                <div class="marquee">
+                    <p id="marquee-text">THIS WEBSITE IS A WORK IN PROGRESS! THIS WEBSITE IS A WORK IN PROGRESS!
+                </div>
+
+                <div id="ch-switch">
+                    <div id="logo-switch" class="switch">
+                        <img src="assets/logoSwitch3.png" class="letter" id="logo-switch">
+                        <img src="assets/overlay.png" class="overlay switch-overlay">
+                        <img src="assets/overlay2.png" class="overlay switch-overlay">
+                    </div>
+                </div>
+
+                <div class="ch-logo">
+                    <div id="wa-logo">
+                        <img src="assets/wa3.png" class="letter" id="logo-wa1">
+                        <img src="assets/overlay.png" class="overlay wa-overlay">
+                        <img src="assets/overlay2.png" class="overlay wa-overlay">
+                    </div>
+
+                    <div id="zh-logo">
+                        <img src="assets/zh2.png" class="letter" id="logo-zh1">
+                        <img src="assets/overlay.png" class="overlay zh-overlay">
+                        <img src="assets/overlay2.png" class="overlay zh-overlay">
+                    </div>
+
+                    <div id="jie-logo">
+                        <img src="assets/jie1.png" class="letter" id="logo-jie1">
+                        <img src="assets/overlay.png" class="overlay jie-overlay">
+                        <img src="assets/overlay2.png" class="overlay jie-overlay">
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="nav-stats">
-            <div id="ch-switch">
-                <div id="logo-switch" class="switch">
-                    <img src="assets/logoSwitch3.png" class="letter" id="logo-switch">
-                    <img src="assets/overlay.png" class="overlay switch-overlay">
-                    <img src="assets/overlay2.png" class="overlay switch-overlay">
-                </div>
-            </div>
-
             <span id="SGT">SGT: 0</span>
             <span id="fps">FPS: 0</span>
-
-            <div class="ch-logo">
-                <div id="wa-logo">
-                    <img src="assets/wa3.png" class="letter" id="logo-wa1">
-                    <img src="assets/overlay.png" class="overlay wa-overlay">
-                    <img src="assets/overlay2.png" class="overlay wa-overlay">
-                </div>
-    
-                <div id="zh-logo">
-                    <img src="assets/zh2.png" class="letter" id="logo-zh1">
-                    <img src="assets/overlay.png" class="overlay zh-overlay">
-                    <img src="assets/overlay2.png" class="overlay zh-overlay">
-                </div>
-    
-                <div id="jie-logo">
-                    <img src="assets/jie1.png" class="letter" id="logo-jie1">
-                    <img src="assets/overlay.png" class="overlay jie-overlay">
-                    <img src="assets/overlay2.png" class="overlay jie-overlay">
-                </div>
-            </div>
         </div>
 
         <div class="main-content">
@@ -95,9 +118,12 @@
                             <p>Currently enrolled under Singapore Institute of Management (SIM) x University of London
                                 (UOL), BSc Computer Science course. My favourite language is JavaScript. I like
                                 coding random stuff and have a passion for documentation.
-                                
-                                <br>PS.this site is best viewed on a 1440 x 900 resolution. (inserts semi-colon closing paranthesis)</p>
-                            <p class="pin"><a href="https://maps.app.goo.gl/aAnNHzCi1uP6XyLo6"><img src="assets/pin.png"></a></p>
+
+                                <br>PS.this site is best viewed on a 1440 x 900 resolution. (inserts semi-colon closing
+                                paranthesis)
+                            </p>
+                            <p class="pin"><a href="https://maps.app.goo.gl/aAnNHzCi1uP6XyLo6"><img
+                                        src="assets/pin.png"></a></p>
 
                             <!-- button starts here -->
                             <!-- button created by Mahek jain, https://github.com/Mahekjain2706 -->
@@ -208,17 +234,18 @@
     <div id="star-container"></div>
 
     <script src="index.js"></script>
+
     <script>
         if (window.innerWidth > 768) {
-          const script = document.createElement("script");
-          script.src = "./public/oneko.js";
-          document.body.appendChild(script);
-      
-          const script2 = document.createElement("script");
-          script2.src = "./public/onekoTwo.js";
-          document.body.appendChild(script2);
+            const script = document.createElement("script");
+            //script.src = "./public/oneko.js";
+            document.body.appendChild(script);
+
+            const script2 = document.createElement("script");
+            //script2.src = "./public/onekoTwo.js";
+            document.body.appendChild(script2);
         }
-      </script>
+    </script>
 </body>
 
 </html>
