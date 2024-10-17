@@ -284,6 +284,16 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+#busstopPath {
+    position: absolute;
+    z-index: 3010;
+    width: 128%;
+    height: auto;
+    left: 28%;
+    top: 112%;
+    filter: drop-shadow(5px 5px 0 black);
+}
+
 #busstop {
     position: absolute;
     z-index: 3020;
@@ -291,6 +301,29 @@ h1 {
     height: auto;
     left: 28%;
     top: 112%;
+    filter: drop-shadow(3px 0 0 red) hue-rotate(180deg) drop-shadow(5px 0 0 black);
+}
+
+#vehfareAD {
+    position: absolute;
+    z-index: 3020;
+    width: 9%;
+    height: auto;
+    left: 75%;
+    top: 122.5%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#fishingAD {
+    position: absolute;
+    z-index: 3020;
+    width: 9%;
+    height: auto;
+    left: 63.25%;
+    top: 122.5%;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 /* ch logo */
