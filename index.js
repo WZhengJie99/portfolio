@@ -138,9 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
             wheelContainer.classList.remove('active-project2', 'active-project4', 'active-project5', 'active-project6');
             wheelContainer.classList.add('active-project3');
         } else if (rotation === -300) {
-            // Tile Breaker
-            wheelContainer.classList.remove('active-project2', 'active-project4', 'active-project3', 'active-project6');
-            wheelContainer.classList.add('active-project5');
+            // ex Tile Breaker, XYZ News
+            wheelContainer.classList.remove('active-project2', 'active-project3', 'active-project4', 'active-project5', 'active-project6');
         } else {
             // Scroll down for more! / default
             wheelContainer.classList.remove('active-project2', 'active-project3', 'active-project4', 'active-project5', 'active-project6');

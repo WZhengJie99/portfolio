@@ -78,22 +78,26 @@ h1 {
 }
 
 /* New class for active project */
+/* Music Box */
 .wheel-container.active-project2 {
     background-color: #212121;
 }
-
+/* Fishing */
 .wheel-container.active-project3 {
     background-color: black;
 }
-
+/* SHIM */
 .wheel-container.active-project4 {
     background-color: rgb(13, 16, 23);
 }
-
+/* XYZ News */
 .wheel-container.active-project5 {
+    /* tile breaker
     background-color: rgb(104, 219, 238);
+    */
+    background-color: white;
 }
-
+/* Vehfare */
 .wheel-container.active-project6 {
     background-color: black;
 }
