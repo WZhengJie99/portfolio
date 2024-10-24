@@ -16,18 +16,20 @@
         <div class="toggle-paragraph">
 
             <div class="nav-links">
-                <p class="toggle-chat">- Chat</p>
-                <p class="ComingSoon">- Coming Soon</p>
+                <p class="toggle-chat">🗨️ Chat</p>
+                <p class="ComingSoon" onclick="moveToAreaOneContainer()">- Coming Soon</p>
             </div>
 
             <div class="menu-images">
                 <img src="assets/BusStopFull_4.2.png" alt="Bus-Stop" id="busstopPath">
-                <img src="assets/BusStopFull_4.1.png" alt="Bus-Stop" id="busstop">
+                <img src="assets/BusStopFull_4.3.png" alt="Bus-Stop" id="busstop">
 
-                <a href="https://wzhengjie99.github.io/Tile-Breaker/"><img src="assets/TileBreakerAd.gif" alt="Tile Breaker Ad"
-                        id="fishingAD"></a>
+                <a href="https://wzhengjie99.github.io/Tile-Breaker/"><img src="assets/TileBreakerAd.gif"
+                        alt="Tile Breaker Ad" id="fishingAD"></a>
                 <a href="https://wzhengjie99.github.io/Vehfare/"><img src="assets/vehfareAd.gif" alt="Vehfare Ad"
                         id="vehfareAD"></a>
+                <a href="https://wzhengjie99.github.io/unique-string-gen/"><img src="assets/UnqStringGenAd.gif"
+                        alt="Unique String Gen Ad" id="UnqStringGenAd"></a>
 
                 <div id="marquee-switch">
                     <div class="marq-switch">
@@ -113,10 +115,29 @@
             <iframe src="https://p-chatbox.onrender.com/" id="e-chatbox-iframe"></iframe>
         </div>
 
+        <div class="areaOne-Container">
+            <div class="reversearrow">
+                <img src="assets/whiteArrowBack.png" class="arrowBackBtn" id="whiteArrowBack"
+                    onmouseover="swapToYellowBack()" onmouseout="swapToWhiteBack()"
+                    onclick="moveToWheelContainer()">
+            </div>
+
+            <div class="text-container">
+                <a style="z-index: 4; color: #ffffff; position: absolute; left: 50%; top: 50%; font-size: 24px;">Soon...</a>
+            </div>
+        </div>
+
         <div class="wheel-container">
             <div class="wheel">
                 <div class="wheel-segment" data-project="1">
                     <span>
+
+                        <div class="arrow">
+                            <img src="assets/whiteArrow.png" class="arrowBtn" id="whiteArrow"
+                                onmouseover="swapToYellow()" onmouseout="swapToWhite()"
+                                onclick="moveToAreaOneContainer()">
+                        </div>
+
                         <div class="overlay-text">
                             <h3>Scroll down for more!</h3>
                             <p>Currently enrolled under Singapore Institute of Management (SIM) x University of London
@@ -165,7 +186,8 @@
                             <p>The Vehfare project showcases a webpage design using Tailwind CSS for a fictitious
                                 automotive e-commerce platform dedicated to delivering cutting-edge cyberpunk vehicles
                                 that push the boundaries of innovation.</p>
-                                <a href="https://wzhengjie99.github.io/Vehfare/"><img src="assets/Vehfare.png" alt="Music Box Audio Visualization" class="proj-img"></a>
+                            <a href="https://wzhengjie99.github.io/Vehfare/"><img src="assets/Vehfare.png"
+                                    alt="Music Box Audio Visualization" class="proj-img"></a>
                             <p><a href="https://wzhengjie99.github.io/Vehfare/"
                                     id="proj-dets">https://wzhengjie99.github.io/Vehfare/</a></p>
                         </div>
@@ -180,7 +202,8 @@
                                 an API, a website, a mobile application, and a Telegram bot that utilizes <a
                                     href="https://spacy.io/" id="proj-dets">spaCy</a> for natural language processing
                                 (NLP) as an inference engine.</p>
-                                <a href="https://shim-web.vercel.app/"><img src="assets/SHIM-homepage.png" alt="SHIM-homepage" class="proj-img"></a>
+                            <a href="https://shim-web.vercel.app/"><img src="assets/SHIM-homepage.png"
+                                    alt="SHIM-homepage" class="proj-img"></a>
                             <p>🏠︎ <a href="https://shim-web.vercel.app/"
                                     id="proj-dets">https://shim-web.vercel.app/</a></p>
                         </div>
@@ -194,8 +217,9 @@
                                 box in the center of the application that vibrates according to the bass frequencies of
                                 the music, while particle notes are generated in response to the treble frequencies.
                                 Users can customize the visualizations using the provided GUI controls.</p>
-                                <a href="https://wzhengjie99.github.io/Music-Box-Audio-Visualization/"><img src="assets/Music-Box-Audio-Visualization.png" alt="Music Box Audio Visualization"
-                                class="proj-img"></a>
+                            <a href="https://wzhengjie99.github.io/Music-Box-Audio-Visualization/"><img
+                                    src="assets/Music-Box-Audio-Visualization.png" alt="Music Box Audio Visualization"
+                                    class="proj-img"></a>
                             <p>♪ <a href="https://wzhengjie99.github.io/Music-Box-Audio-Visualization/"
                                     id="proj-dets">https://wzhengjie99.github.io/Music-Box-Audio-Visualization/</a></p>
                         </div>
@@ -207,8 +231,8 @@
                             <h3>Fishing</h3>
                             <p>Motivated by fishing in classic Pokemon games, visitors 'fish' while a custom background
                                 with animated sea creatures fill the screen overtime.</p>
-                                <a href="https://wzhengjie99.github.io/Fishing/"><img src="assets/Fishing-for-102-secs.png" alt="You have been fishing for 102 secs"
-                                class="proj-img"></a>
+                            <a href="https://wzhengjie99.github.io/Fishing/"><img src="assets/Fishing-for-102-secs.png"
+                                    alt="You have been fishing for 102 secs" class="proj-img"></a>
                             <p>🐟 <a href="https://wzhengjie99.github.io/Fishing/"
                                     id="proj-dets">https://wzhengjie99.github.io/Fishing/</a></p>
                         </div>
@@ -219,13 +243,16 @@
                     <span>
                         <div class="overlay-text">
                             <h3>XYZ News Website</h3>
-                            <p>A news website made with Bootstrap featuring a few articles following the style of <a href="https://www.channelnewsasia.com/"
-                                    id="proj-dets">Channel News Asia (CNA)</a>, a Singaporean multinational news channel owned by Mediacorp.
+                            <p>A news website made with Bootstrap featuring a few articles following the style of <a
+                                    href="https://www.channelnewsasia.com/" id="proj-dets">Channel News Asia (CNA)</a>,
+                                a Singaporean multinational news channel owned by Mediacorp.
                             </p>
-                            <a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/"><img src="assets/xyz-website.png"
-                                    alt="XYZ News Website Screenshot" class="proj-img" id="xyz-logo"></a>
+                            <a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/"><img
+                                    src="assets/xyz-website.png" alt="XYZ News Website Screenshot" class="proj-img"
+                                    id="xyz-logo"></a>
                             <p><a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/"
-                                    id="proj-dets">https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/</a></p>
+                                    id="proj-dets">https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/</a>
+                            </p>
                         </div>
                     </span>
                 </div>
@@ -249,6 +276,33 @@
             script2.src = "./public/onekoTwo.js";
             document.body.appendChild(script2);
         }
+
+        function swapToYellow() {
+            document.getElementById("whiteArrow").src = "assets/yellowArrow.png";
+        }
+
+        function swapToWhite() {
+            document.getElementById("whiteArrow").src = "assets/whiteArrow.png";
+        }
+
+        function moveToAreaOneContainer() {
+            document.querySelector('.wheel').style.transform = 'translateX(1300px)';
+            document.querySelector('.areaOne-Container').style.transform = 'translateX(0)';
+        }
+
+        function swapToYellowBack() {
+            document.getElementById("whiteArrowBack").src = "assets/yellowArrowBack.png";
+        }
+
+        function swapToWhiteBack() {
+            document.getElementById("whiteArrowBack").src = "assets/whiteArrowBack.png";
+        }
+
+        function moveToWheelContainer() {
+            document.querySelector('.wheel').style.transform = 'translateX(0px)';
+            document.querySelector('.areaOne-Container').style.transform = 'translateX(-100%)';
+        }
+
     </script>
 </body>
 
