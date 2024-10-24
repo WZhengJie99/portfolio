@@ -426,4 +426,28 @@ document.addEventListener('DOMContentLoaded', function () {
         const chatbox = document.getElementById('e-chatbox-container');
         chatbox.classList.toggle('expanded');
     }
+
+    const iframe = document.getElementById('chatbox-iframe');
+    const loadingMessage = document.getElementById('loading-message');
+
+    loadingMessage.style.display = 'block';
+    iframe.style.display = 'none';
+
+    iframe.onload = function() {
+        loadingMessage.style.display = 'none';
+        
+        iframe.style.display = 'block';
+    };
+
+    const eiframe = document.getElementById('e-chatbox-iframe');
+    const eloadingMessage = document.getElementById('e-loading-message');
+
+    eloadingMessage.style.display = 'block';
+    eiframe.style.display = 'none';
+
+    eiframe.onload = function() {
+        eloadingMessage.style.display = 'none';
+        
+        eiframe.style.display = 'block';
+    };
 });
