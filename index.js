@@ -12,6 +12,20 @@ document.addEventListener('DOMContentLoaded', function () {
     let touchEndY = 0;
     let menuOpen = false;
 
+
+    let earthExpanded = false;
+
+    let rotationDegree = 0;
+    let isExpanded = false;
+    let translateXValue = 1850;
+    let earthWidth = 2000;
+    let earthHeight = 2000;
+    let rotationInterval;
+
+    earthEmoji.style.transform = `translateX(${translateXValue}px)`;
+    earthEmoji.style.width = `${earthWidth}px`;
+    earthEmoji.style.height = `${earthHeight}px`
+
     window.onload = function () {
         var chswitchOn = true;
 
@@ -110,7 +124,10 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     wheel.style.transform = `rotate(${currentRotation}deg)`;
-    earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
+
+    if (earthExpanded === false) {
+        earthEmoji.style.transform = `translateX(${translateXValue}px) rotate(${currentRotation}deg)`;
+    }
 
     function getNextSegmentIndex(currentIndex, direction) {
         const segmentCount = wheelSegments.length;
@@ -123,23 +140,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateActiveProject(rotation) {
         //const roundedRotation = Math.round(rotation);
-        if (rotation === -60) {
+        if (rotation === -60 && earthExpanded === false) {
             // Vehfare
             wheelContainer.classList.remove('active-project2', 'active-project4', 'active-project5', 'active-project3');
             wheelContainer.classList.add('active-project6');
-        } else if (rotation === -120) {
+        } else if (rotation === -120 && earthExpanded === false) {
             // SHIM
             wheelContainer.classList.remove('active-project2', 'active-project3', 'active-project5', 'active-project6');
             wheelContainer.classList.add('active-project4');
-        } else if (rotation === -180) {
+        } else if (rotation === -180 && earthExpanded === false) {
             // Music Box
             wheelContainer.classList.remove('active-project3', 'active-project4', 'active-project5', 'active-project6');
             wheelContainer.classList.add('active-project2');
-        } else if (rotation === -240) {
+        } else if (rotation === -240 && earthExpanded === false) {
             // Fishing
             wheelContainer.classList.remove('active-project2', 'active-project4', 'active-project5', 'active-project6');
             wheelContainer.classList.add('active-project3');
-        } else if (rotation === -300) {
+        } else if (rotation === -300 && earthExpanded === false) {
             // ex Tile Breaker, XYZ News
             wheelContainer.classList.remove('active-project2', 'active-project3', 'active-project4', 'active-project5', 'active-project6');
         } else {
@@ -152,15 +169,18 @@ document.addEventListener('DOMContentLoaded', function () {
         return -60 * index;
     }
 
-    wheelContainer.addEventListener('wheel', (event) => {
-        if (!menuOpen && !event.target.closest('.button-container')) {
-            const direction = event.deltaY > 0 ? 'up' : 'down';
+    wheelContainer.addEventListener("wheel", (event) => {
+        if (!menuOpen && !event.target.closest(".button-container")) {
+            const direction = event.deltaY > 0 ? "up" : "down";
             const currentSegmentIndex = Math.abs(currentRotation / 60) % projects.length;
             const nextSegmentIndex = getNextSegmentIndex(currentSegmentIndex, direction);
 
             currentRotation = calculateRotationAngle(nextSegmentIndex);
             wheel.style.transform = `rotate(${currentRotation}deg)`;
-            earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
+
+            if (earthExpanded === false) {
+                earthEmoji.style.transform = `translateX(${translateXValue}px) rotate(${currentRotation}deg)`;
+            }
 
             updateActiveProject(currentRotation);
         }
@@ -186,7 +206,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         currentRotation = calculateRotationAngle(nextSegmentIndex);
         wheel.style.transform = `rotate(${currentRotation}deg)`;
-        earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
+
+        if (earthExpanded === false) {
+            earthEmoji.style.transform = `translateX(${translateXValue}px) rotate(${currentRotation}deg)`;
+        }
 
         updateActiveProject(currentRotation);
     }
@@ -410,26 +433,22 @@ document.addEventListener('DOMContentLoaded', function () {
     requestAnimationFrame(updateFPS);
     setInterval(updateSGT, 1000);
 
-    document.querySelector('.e-expand-chatbox').addEventListener('click', function () {
-        toggleChatbox();
+    document.querySelectorAll('.e-expand-chatbox, .e-expand-chatbox-text, .e-close-chatbox, .toggle-chat').forEach((element) => {
+        element.addEventListener('click', toggleChatbox);
     });
-
-    document.querySelector('.e-expand-chatbox-text').addEventListener('click', function () {
-        toggleChatbox();
-    });
-
-    document.querySelector('.e-close-chatbox').addEventListener('click', function () {
-        toggleChatbox();
-    });
-
-    document.querySelector('.toggle-chat').addEventListener('click', function () {
-        toggleChatbox();
-    });
-
+    
     function toggleChatbox() {
         const chatbox = document.getElementById('e-chatbox-container');
+        const earthExp = document.querySelector('.earth-exp');
+    
         chatbox.classList.toggle('expanded');
-    }
+    
+        if (chatbox.classList.contains('expanded')) {
+            earthExp.classList.add('fade-out');
+        } else {
+            earthExp.classList.remove('fade-out');
+        }
+    }    
 
     const iframe = document.getElementById('chatbox-iframe');
     const loadingMessage = document.getElementById('loading-message');
@@ -465,9 +484,9 @@ document.addEventListener('DOMContentLoaded', function () {
         percentageText.textContent = `🗲${percentage}%`;
 
         if (percentage == 0) {
-        progressBar.style.color = "red";
-        percentageText.style.color = "red";
-        percentageText.textContent = `🗲${percentage}% NEEDS CHARGING`;
+            progressBar.style.color = "red";
+            percentageText.style.color = "red";
+            percentageText.textContent = `🗲${percentage}% NEEDS CHARGING`;
         } else if (percentage <= 49) {
             progressBar.style.color = "red";
             percentageText.style.color = "red";
@@ -484,14 +503,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById("path-e").addEventListener("click", () => {
+    document.getElementById("minus-e").addEventListener("click", () => {
         if (percentage > 0) {
             percentage -= 1;
             updateFooterPercentage();
         }
     });
 
-    document.getElementById("mona-lisa-e").addEventListener("click", () => {
+    document.getElementById("plus-e").addEventListener("click", () => {
         if (percentage < 100) {
             percentage += 1;
             updateFooterPercentage();
@@ -499,5 +518,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     updateFooterPercentage();
+
+    function rotateEarth() {
+        if (isExpanded) {
+            wheel.style.opacity = '0';
+            translateXValue = -80;
+            earthWidth = 700;
+            earthHeight = 700;
+
+            if (!earthExpanded) {
+                rotationInterval = setInterval(() => {
+                    rotationDegree += 1;
+                    earthEmoji.style.transform = `translateX(${translateXValue}px) rotate(${rotationDegree}deg)`;
+                }, 16);
+            }
+            earthExpanded = true;
+
+        } else {
+            wheel.style.opacity = '1';
+            translateXValue = 1850;
+            earthWidth = 2000;
+            earthHeight = 2000;
+
+            clearInterval(rotationInterval);
+            earthExpanded = false;
+        }
+
+        // Apply transformations and size changes
+        earthEmoji.style.transform = `translateX(${translateXValue}px) rotate(${currentRotation}deg)`;
+        earthEmoji.style.width = `${earthWidth}px`;
+        earthEmoji.style.height = `${earthHeight}px`;
+
+        isExpanded = !isExpanded;
+    }
+
+    document.querySelector(".earth-exp").addEventListener("click", function () {
+        rotateEarth();
+    });
 
 });

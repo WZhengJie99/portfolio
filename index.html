@@ -16,20 +16,21 @@
         <div class="toggle-paragraph">
 
             <div class="nav-links">
-                <p class="toggle-chat">🗨️ Chat</p>
-                <p class="ComingSoon" onclick="moveToAreaOneContainer()">- Coming Soon</p>
+                <p class="toggle-chat">- Chat</p>
+                <p class="ComingSoon" onclick="toggleContainers()">- Coming Soon</p>
             </div>
 
             <div class="menu-images">
                 <img src="assets/BusStopFull_4.2.png" alt="Bus-Stop" id="busstopPath">
                 <img src="assets/BusStopFull_4.3.png" alt="Bus-Stop" id="busstop">
 
-                <a href="https://wzhengjie99.github.io/Tile-Breaker/" target="_blank"><img src="assets/TileBreakerAd.gif"
-                        alt="Tile Breaker Ad" id="fishingAD" target="_blank"></a>
-                <a href="https://wzhengjie99.github.io/Vehfare/" target="_blank"><img src="assets/vehfareAd.gif" alt="Vehfare Ad"
-                        id="vehfareAD" target="_blank"></a>
-                <a href="https://wzhengjie99.github.io/unique-string-gen/" target="_blank"><img src="assets/UnqStringGenAd.gif"
-                        alt="Unique String Gen Ad" id="UnqStringGenAd" target="_blank"></a>
+                <a href="https://wzhengjie99.github.io/Tile-Breaker/" target="_blank"><img
+                        src="assets/TileBreakerAd.gif" alt="Tile Breaker Ad" id="fishingAD" target="_blank"></a>
+                <a href="https://wzhengjie99.github.io/Vehfare/" target="_blank"><img src="assets/vehfareAd.gif"
+                        alt="Vehfare Ad" id="vehfareAD" target="_blank"></a>
+                <a href="https://wzhengjie99.github.io/unique-string-gen/" target="_blank"><img
+                        src="assets/UnqStringGenAd.gif" alt="Unique String Gen Ad" id="UnqStringGenAd"
+                        target="_blank"></a>
 
                 <div id="marquee-switch">
                     <div class="marq-switch">
@@ -79,13 +80,20 @@
             <span id="visitors">Visitors:</span>
             <div id="visitor-count-container">
                 <a href="https://github.com/WZhengJie99/Visitor-Count" id="visitor-count-href" target="_blank"></a>
-                <iframe src="https://visitor-count-t7vu.onrender.com/?siteIdentifier=https://wzhengjie99.github.io/portfolio/&style=cards-spades" id="visitor-count-iframe"></iframe>
+                <iframe
+                    src="https://visitor-count-t7vu.onrender.com/?siteIdentifier=https://wzhengjie99.github.io/portfolio/&style=cards-spades"
+                    id="visitor-count-iframe"></iframe>
             </div>
         </div>
 
         <div class="nav-stats-2">
-            <span id="path-e">🏞</span>
-            <span id="mona-lisa-e">🖼</span>
+            <span id="plus-e">🏜</span>
+            <span id="minus-e">🏞</span>
+            <span class="oneko-toggle" onclick="toggleOneko()">🐾</span>
+        </div>
+
+        <div class="nav-stats-3">
+            <span class="earth-exp"><img src="assets/mona-lisa.png"></span>
         </div>
 
         <div class="main-content">
@@ -133,12 +141,12 @@
         <div class="areaOne-Container">
             <div class="reversearrow">
                 <img src="assets/whiteArrowBack.png" class="arrowBackBtn" id="whiteArrowBack"
-                    onmouseover="swapToYellowBack()" onmouseout="swapToWhiteBack()"
-                    onclick="moveToWheelContainer()">
+                    onmouseover="swapToYellowBack()" onmouseout="swapToWhiteBack()" onclick="moveToWheelContainer()">
             </div>
 
             <div class="text-container">
-                <a style="z-index: 4; color: #ffffff; position: absolute; left: 50%; top: 50%; font-size: 24px;">Coming Soon...</a>
+                <a style="z-index: 4; color: #ffffff; position: absolute; left: 50%; top: 50%; font-size: 24px;">Coming
+                    Soon...</a>
             </div>
 
             <div id="threeDContainer"></div>
@@ -205,8 +213,8 @@
                             <p>The Vehfare project showcases a webpage design using Tailwind CSS for a fictitious
                                 automotive e-commerce platform dedicated to delivering cutting-edge cyberpunk vehicles
                                 that push the boundaries of innovation.</p>
-                            <a href="https://wzhengjie99.github.io/Vehfare/" target="_blank"><img src="assets/Vehfare.png"
-                                    alt="Music Box Audio Visualization" class="proj-img"></a>
+                            <a href="https://wzhengjie99.github.io/Vehfare/" target="_blank"><img
+                                    src="assets/Vehfare.png" alt="Music Box Audio Visualization" class="proj-img"></a>
                             <p><a href="https://wzhengjie99.github.io/Vehfare/" target="_blank"
                                     id="proj-dets">https://wzhengjie99.github.io/Vehfare/</a></p>
                         </div>
@@ -219,7 +227,8 @@
                             <p>SHIM, or Smart Home Inventory Manager, is a tool for homeowners to efficiently keep track
                                 of and find household inventory items. Leading a team of 4 other members, we developed
                                 an API, a website, a mobile application, and a Telegram bot that utilizes <a
-                                    href="https://spacy.io/" target="_blank" id="proj-dets">spaCy</a> for natural language processing
+                                    href="https://spacy.io/" target="_blank" id="proj-dets">spaCy</a> for natural
+                                language processing
                                 (NLP) as an inference engine.</p>
                             <a href="https://shim-web.vercel.app/" target="_blank"><img src="assets/SHIM-homepage.png"
                                     alt="SHIM-homepage" class="proj-img"></a>
@@ -250,14 +259,16 @@
                             <h3>Fishing</h3>
                             <p>Motivated by fishing in classic Pokemon games, visitors 'fish' while a custom background
                                 with animated sea creatures fill the screen overtime.</p>
-                            <a href="https://wzhengjie99.github.io/Fishing/" target="_blank"><img src="assets/Fishing-for-102-secs.png"
-                                    alt="You have been fishing for 102 secs" class="proj-img"></a>
+                            <a href="https://wzhengjie99.github.io/Fishing/" target="_blank"><img
+                                    src="assets/Fishing-for-102-secs.png" alt="You have been fishing for 102 secs"
+                                    class="proj-img"></a>
                             <p>🐟 <a href="https://wzhengjie99.github.io/Fishing/" target="_blank"
                                     id="proj-dets">https://wzhengjie99.github.io/Fishing/</a></p>
                         </div>
 
                         <div class="twitter-container">
-                            <a class="twitter-timeline" data-dnt="true" data-tweet-limit="4" href="https://twitter.com/WZJ_99_?ref_src=twsrc%5Etfw">Tweets by WZJ_99_</a>
+                            <a class="twitter-timeline" data-dnt="true" data-tweet-limit="4"
+                                href="https://twitter.com/WZJ_99_?ref_src=twsrc%5Etfw">Tweets by WZJ_99_</a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                         </div>
 
@@ -269,13 +280,15 @@
                         <div class="overlay-text">
                             <h3>XYZ News Website</h3>
                             <p>A news website made with Bootstrap featuring a few articles following the style of <a
-                                    href="https://www.channelnewsasia.com/" target="_blank" id="proj-dets">Channel News Asia (CNA)</a>,
+                                    href="https://www.channelnewsasia.com/" target="_blank" id="proj-dets">Channel News
+                                    Asia (CNA)</a>,
                                 a Singaporean multinational news channel owned by Mediacorp.
                             </p>
-                            <a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/" target="_blank"><img
-                                    src="assets/xyz-website.png" alt="XYZ News Website Screenshot" class="proj-img"
-                                    id="xyz-logo"></a>
-                            <p><a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/" target="_blank"
+                            <a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/"
+                                target="_blank"><img src="assets/xyz-website.png" alt="XYZ News Website Screenshot"
+                                    class="proj-img" id="xyz-logo"></a>
+                            <p><a href="https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/"
+                                    target="_blank"
                                     id="proj-dets">https://wzhengjie99.github.io/CM1040-Web-Development-News-Website/</a>
                             </p>
                         </div>
@@ -291,16 +304,40 @@
     <script src="index.js"></script>
 
     <script>
-        if (window.innerWidth > 768) {
-            //Dual wielding oneko cats
-            const script = document.createElement("script");
-            script.src = "./public/oneko.js";
-            document.body.appendChild(script);
+        let onekoToggle = false;
 
-            const script2 = document.createElement("script");
-            script2.src = "./public/onekoTwo.js";
-            document.body.appendChild(script2);
+        function toggleOneko() {
+            const existingNekoElements = document.querySelectorAll("#oneko, #onekoTwo");
+            const existingOnekoScripts = document.querySelectorAll('script[src*="oneko"]');
+
+            if (onekoToggle) {
+                existingNekoElements.forEach((neko) => {
+                    neko.remove();
+                });
+
+                existingOnekoScripts.forEach((script) => {
+                    script.remove();
+                });
+
+                console.log("Oneko disabled");
+            } else {
+                if (window.innerWidth > 768) {
+                    const script1 = document.createElement("script");
+                    script1.src = "./public/oneko.js";
+                    document.body.appendChild(script1);
+
+                    const script2 = document.createElement("script");
+                    script2.src = "./public/onekoTwo.js";
+                    document.body.appendChild(script2);
+
+                    console.log("Oneko enabled");
+                }
+            }
+
+            onekoToggle = !onekoToggle;
         }
+
+        let isInAreaOne = false;
 
         function swapToYellow() {
             document.getElementById("whiteArrow").src = "assets/yellowArrow.png";
@@ -311,8 +348,10 @@
         }
 
         function moveToAreaOneContainer() {
+            document.querySelector('.earth-exp').classList.add('fade-out');
+
             document.querySelector('.wheel').style.transform = 'translateX(1300px)';
-            document.querySelector('.earth-emoji').style.transform = 'translateX(1300px)';
+            document.querySelector('.earth-emoji').style.transform = 'translateX(3150px)';
             document.querySelector('.areaOne-Container').style.transform = 'translateX(0)';
         }
 
@@ -325,9 +364,20 @@
         }
 
         function moveToWheelContainer() {
+            document.querySelector('.earth-exp').classList.remove('fade-out');
+
             document.querySelector('.wheel').style.transform = 'translateX(0px)';
-            document.querySelector('.earth-emoji').style.transform = 'translateX(0px)';
+            document.querySelector('.earth-emoji').style.transform = 'translateX(1850px)';
             document.querySelector('.areaOne-Container').style.transform = 'translateX(-100%)';
+        }
+
+        function toggleContainers() {
+            if (isInAreaOne) {
+                moveToWheelContainer();
+            } else {
+                moveToAreaOneContainer();
+            }
+            isInAreaOne = !isInAreaOne;
         }
 
     </script>

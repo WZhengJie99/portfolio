@@ -112,7 +112,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease;
+    transition: transform 1s ease, opacity 1s ease;
     margin-right: -1850px;
     overflow: visible;
     z-index: 100;
@@ -122,11 +122,12 @@ h1 {
     position: absolute;
     width: 2000px;
     height: 2000px;
+    font-size: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 1s ease;
-    margin-right: -1850px;
+    transform: translateX(1850px);
+    transition: transform 1s ease, width 1s ease, height 1s ease;
     overflow: visible;
     z-index: 90;
 }
@@ -697,26 +698,23 @@ h1 {
     max-width: 38%;
 }
 
-#mona-lisa-e, #path-e {
+#plus-e, #minus-e {
     padding: 0px;
     background-color: transparent;
     color: black;
     font-size: 30px;
     width: auto;
-}
-
-#path-e {
     border: 1px solid #000000;
     border-radius: 5px;
 }
 
-#path-e:hover {
+#minus-e:hover {
     transform: scale(1.1);
     color: red;
     border-color: red;
 }
 
-#mona-lisa-e:hover {
+#plus-e:hover {
     transform: scale(1.1);
 }
 
@@ -729,6 +727,51 @@ h1 {
     color: green;
 }
 
+.oneko-toggle {
+    padding: 0px;
+    background: linear-gradient(to bottom right, rgb(255, 0, 127), rgb(0, 0, 0));
+    color: transparent;
+    background-clip: text;
+    font-size: 20px;
+    width: auto;
+}
+
+.oneko-toggle:hover {
+    transform: scale(1.1);
+}
+
+.nav-stats-3 {
+    display: flex;
+    gap: 5px;
+    position: fixed;
+    top: 106px;
+    left: 12px;
+    z-index: 110;
+    max-width: 38%;
+}
+
+.earth-exp {
+    padding: 0px;
+    background-color: transparent;
+    color: black;
+    font-size: 90px;
+    width: auto;
+    height: 80px;
+    transition: opacity 1s ease-out;
+}
+
+.earth-exp img {
+    width: auto;
+    height: 100%;
+}
+
+.earth-exp.fade-out {
+    opacity: 0;
+}
+
+.earth-exp:hover {
+    transform: scale(1.05);
+}
 
 .footer {
     position: absolute;
@@ -1090,7 +1133,7 @@ h1 {
         font-size: smaller;
     }
 
-    .pin, .e-expand-chatbox, .nav-stats-1, .nav-stats-2, #expand-text {
+    .pin, .e-expand-chatbox, .nav-stats-1, .nav-stats-2, .nav-stats-3, #expand-text {
         display: none;
     }
 
