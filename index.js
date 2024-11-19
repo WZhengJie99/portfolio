@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const wheel = document.querySelector('.wheel');
     const wheelSegments = document.querySelectorAll('.wheel-segment');
+    const earthEmoji = document.querySelector('.earth-emoji');
     const wheelContainer = document.querySelector('.wheel-container');
     const menuToggle = document.querySelector('.menu-toggle');
     const mainContent = document.querySelector('.main-content');
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (mswitchOn) {
                 document.getElementById('marquee-switch').classList.add('brighter');
                 document.getElementById('marquee-switch').classList.remove('dim');
-                
+
                 document.getElementById('marquee-text').classList.add('brighter');
                 document.getElementById('marquee-text').classList.remove('marquee-dim');
 
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 document.getElementById('marquee-switch').classList.remove('brighter');
                 document.getElementById('marquee-switch').classList.add('dim');
-                
+
                 document.getElementById('marquee-text').classList.remove('brighter');
                 document.getElementById('marquee-text').classList.add('marquee-dim');
 
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     wheel.style.transform = `rotate(${currentRotation}deg)`;
+    earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
 
     function getNextSegmentIndex(currentIndex, direction) {
         const segmentCount = wheelSegments.length;
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             currentRotation = calculateRotationAngle(nextSegmentIndex);
             wheel.style.transform = `rotate(${currentRotation}deg)`;
+            earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
 
             updateActiveProject(currentRotation);
         }
@@ -183,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         currentRotation = calculateRotationAngle(nextSegmentIndex);
         wheel.style.transform = `rotate(${currentRotation}deg)`;
+        earthEmoji.style.transform = `rotate(${currentRotation}deg)`;
 
         updateActiveProject(currentRotation);
     }
@@ -433,9 +437,8 @@ document.addEventListener('DOMContentLoaded', function () {
     loadingMessage.style.display = 'block';
     iframe.style.display = 'none';
 
-    iframe.onload = function() {
+    iframe.onload = function () {
         loadingMessage.style.display = 'none';
-        
         iframe.style.display = 'block';
     };
 
@@ -445,9 +448,56 @@ document.addEventListener('DOMContentLoaded', function () {
     eloadingMessage.style.display = 'block';
     eiframe.style.display = 'none';
 
-    eiframe.onload = function() {
+    eiframe.onload = function () {
         eloadingMessage.style.display = 'none';
-        
         eiframe.style.display = 'block';
     };
+
+    let percentage = 50;
+
+    function updateFooterPercentage() {
+        const percentageDisplay = document.getElementById("percentage-display");
+        const progressBar = document.getElementById("progress-bar");
+        const percentageText = document.getElementById("percentage-text");
+
+        progressBar.textContent = "▌".repeat(Math.floor(percentage / 12.5));
+
+        percentageText.textContent = `🗲${percentage}%`;
+
+        if (percentage == 0) {
+        progressBar.style.color = "red";
+        percentageText.style.color = "red";
+        percentageText.textContent = `🗲${percentage}% NEEDS CHARGING`;
+        } else if (percentage <= 49) {
+            progressBar.style.color = "red";
+            percentageText.style.color = "red";
+        } else if (percentage <= 50) {
+            progressBar.style.color = "orange";
+            percentageText.style.color = "orange";
+        } else if (percentage == 100) {
+            progressBar.style.color = "black";
+            percentageText.style.color = "black";
+            percentageText.textContent = `🗲${percentage}% FULLY CHARGED`;
+        } else {
+            progressBar.style.color = "green";
+            percentageText.style.color = "green";
+        }
+    }
+
+    document.getElementById("path-e").addEventListener("click", () => {
+        if (percentage > 0) {
+            percentage -= 1;
+            updateFooterPercentage();
+        }
+    });
+
+    document.getElementById("mona-lisa-e").addEventListener("click", () => {
+        if (percentage < 100) {
+            percentage += 1;
+            updateFooterPercentage();
+        }
+    });
+
+    updateFooterPercentage();
+
 });

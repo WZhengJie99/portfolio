@@ -104,7 +104,7 @@ h1 {
 
 /* Wheel styling */
 .wheel {
-    position: relative;
+    position: absolute;
     width: 2000px;
     height: 2000px;
     border-radius: 100%;
@@ -115,6 +115,25 @@ h1 {
     transition: transform 1s ease;
     margin-right: -1850px;
     overflow: visible;
+    z-index: 100;
+}
+
+.earth-emoji {
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease;
+    margin-right: -1850px;
+    overflow: visible;
+    z-index: 90;
+}
+
+.earth-emoji img {
+    width: 100%;
+    height: 100%;
 }
 
 /* Wheel segments styling */
@@ -176,7 +195,7 @@ h1 {
     max-height: 15%;
     width: 15%;
     height: 15%;
-    left: 95%;
+    left: 98%;
     top: 15%;
 }
 
@@ -207,27 +226,27 @@ h1 {
 }
 
 /* Positioning each segment to make the wheel effect */
-.wheel-segment:nth-child(1) {
+.wheel-segment:nth-of-type(1) {
     transform: rotate(180deg) translateX(600px);
 }
 
-.wheel-segment:nth-child(2) {
+.wheel-segment:nth-of-type(2) {
     transform: rotate(240deg) translateX(600px);
 }
 
-.wheel-segment:nth-child(3) {
+.wheel-segment:nth-of-type(3) {
     transform: rotate(300deg) translateX(600px);
 }
 
-.wheel-segment:nth-child(4) {
-    transform: rotate(360deg) translateX(600px);
+.wheel-segment:nth-of-type(4) {
+    transform: rotate(0deg) translateX(600px);
 }
 
-.wheel-segment:nth-child(5) {
+.wheel-segment:nth-of-type(5) {
     transform: rotate(60deg) translateX(600px);
 }
 
-.wheel-segment:nth-child(6) {
+.wheel-segment:nth-of-type(6) {
     transform: rotate(120deg) translateX(600px);
 }
 
@@ -613,7 +632,7 @@ h1 {
     }
 }
 
-.nav-stats {
+.nav-stats-1 {
     display: flex;
     gap: 5px;
     position: fixed;
@@ -667,6 +686,49 @@ h1 {
     border-radius: 5px;
     overflow: hidden;
 }
+
+.nav-stats-2 {
+    display: flex;
+    gap: 5px;
+    position: fixed;
+    top: 56px;
+    left: 15px;
+    z-index: 110;
+    max-width: 38%;
+}
+
+#mona-lisa-e, #path-e {
+    padding: 0px;
+    background-color: transparent;
+    color: black;
+    font-size: 30px;
+    width: auto;
+}
+
+#path-e {
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+#path-e:hover {
+    transform: scale(1.1);
+    color: red;
+    border-color: red;
+}
+
+#mona-lisa-e:hover {
+    transform: scale(1.1);
+}
+
+#progress-bar {
+    color: black;
+}
+
+#percentage-text {
+    font-weight: bold;
+    color: green;
+}
+
 
 .footer {
     position: absolute;
@@ -824,13 +886,24 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #ff0000;
+    background: linear-gradient(to bottom right, rgb(255, 255, 0), rgb(255, 0, 0));
     top: 0;
     left: 0%;
     transition: transform 1s ease;
     transform: translateX(-100%);
     z-index: 2;
     display: block;
+}
+
+#threeDContainer {
+    position: absolute;
+    left: 49vw;
+    top: 15vh;
+    width: 80%;
+    height: 80%;
+    max-width: 600px;
+    max-height: 400px;
+    border: 2px solid white;
 }
 
 .reversearrow {
@@ -1017,7 +1090,7 @@ h1 {
         font-size: smaller;
     }
 
-    .pin, .e-expand-chatbox, .nav-stats, #expand-text {
+    .pin, .e-expand-chatbox, .nav-stats-1, .nav-stats-2, #expand-text {
         display: none;
     }
 
