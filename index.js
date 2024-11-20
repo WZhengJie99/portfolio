@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     const wheel = document.querySelector('.wheel');
     const wheelSegments = document.querySelectorAll('.wheel-segment');
-    const earthEmoji = document.querySelector('.earth-emoji');
     const wheelContainer = document.querySelector('.wheel-container');
     const menuToggle = document.querySelector('.menu-toggle');
     const mainContent = document.querySelector('.main-content');
     const paragraph = document.querySelector('.toggle-paragraph');
+    
+    const earthEmoji = document.querySelector('.earth-emoji');
+    const solar = document.querySelector('.solar');
+    const satelliteOne = document.querySelector('.satellite-one');
 
     let currentRotation = 0;
     let touchStartY = 0;
     let touchEndY = 0;
     let menuOpen = false;
-
 
     let earthExpanded = false;
 
@@ -436,19 +438,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.e-expand-chatbox, .e-expand-chatbox-text, .e-close-chatbox, .toggle-chat').forEach((element) => {
         element.addEventListener('click', toggleChatbox);
     });
-    
+
     function toggleChatbox() {
         const chatbox = document.getElementById('e-chatbox-container');
         const earthExp = document.querySelector('.earth-exp');
-    
+
         chatbox.classList.toggle('expanded');
-    
+
         if (chatbox.classList.contains('expanded')) {
             earthExp.classList.add('fade-out');
         } else {
             earthExp.classList.remove('fade-out');
         }
-    }    
+    }
 
     const iframe = document.getElementById('chatbox-iframe');
     const loadingMessage = document.getElementById('loading-message');
@@ -533,6 +535,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 16);
             }
             earthExpanded = true;
+            
+            updateOrbitDistanceOne(-400);
+            solar.style.transform = `translate(-440px, -70px)`;
+            satelliteOne.style.width = `50px`;
 
         } else {
             wheel.style.opacity = '1';
@@ -542,6 +548,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             clearInterval(rotationInterval);
             earthExpanded = false;
+            
+            updateOrbitDistanceOne(-1650);
+            solar.style.transform = `translate(700px, -70px)`;
+            satelliteOne.style.width = `250px`;
         }
 
         // Apply transformations and size changes
@@ -555,5 +565,13 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector(".earth-exp").addEventListener("click", function () {
         rotateEarth();
     });
+
+    function updateOrbitDistanceOne(distance) {
+        satelliteOne.style.setProperty('--orbit-distance', `${Math.abs(distance)}px`);
+    }
+    
+    updateOrbitDistanceOne(-1650);
+    solar.style.transform = `translate(700px, -70px)`;
+    satelliteOne.style.width = `250px`;
 
 });
