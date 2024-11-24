@@ -5,10 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainContent = document.querySelector('.main-content');
     const paragraph = document.querySelector('.toggle-paragraph');
-    
+
     const earthEmoji = document.querySelector('.earth-emoji');
-    const solar = document.querySelector('.solar');
+    const satelliteOneWrapper = document.querySelector('.satellite-one-wrapper');
     const satelliteOne = document.querySelector('.satellite-one');
+    const planeOneWrapper = document.querySelector('.plane-one-wrapper');
+    const planeOne = document.querySelector('.plane-one');
+    const satelliteTwoWrapper = document.querySelector('.satellite-two-wrapper');
+    const satelliteTwo = document.querySelector('.satellite-two');
 
     let currentRotation = 0;
     let touchStartY = 0;
@@ -488,6 +492,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (percentage == 0) {
             progressBar.style.color = "red";
             percentageText.style.color = "red";
+            percentageText.textContent = `🗲${percentage}% NEEDS CHARGING >:(`;
+        } else if (percentage <= 10) {
+            progressBar.style.color = "red";
+            percentageText.style.color = "red";
             percentageText.textContent = `🗲${percentage}% NEEDS CHARGING`;
         } else if (percentage <= 49) {
             progressBar.style.color = "red";
@@ -535,10 +543,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 16);
             }
             earthExpanded = true;
-            
-            updateOrbitDistanceOne(-400);
-            solar.style.transform = `translate(-440px, -70px)`;
+
+            updateSatOneOrbitDistance(-400);
+            satelliteOneWrapper.style.transform = `translate(-455px, -70px)`;
             satelliteOne.style.width = `50px`;
+
+            updatePlaneOneDistance(-345);
+            planeOneWrapper.style.transform = `translate(-425px, 0px)`;
+            planeOne.style.width = `10px`;
+
+            updateSatTwoOrbitDistance(-390);
+            satelliteTwoWrapper.style.transform = `translate(-455px, -75px)`;
+            satelliteTwo.style.width = `50px`;
 
         } else {
             wheel.style.opacity = '1';
@@ -548,10 +564,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
             clearInterval(rotationInterval);
             earthExpanded = false;
-            
-            updateOrbitDistanceOne(-1650);
-            solar.style.transform = `translate(700px, -70px)`;
+
+            updateSatOneOrbitDistance(-1650);
+            satelliteOneWrapper.style.transform = `translate(700px, -170px)`;
             satelliteOne.style.width = `250px`;
+
+            updatePlaneOneDistance(-820);
+            planeOneWrapper.style.transform = `translate(730px, 0px)`;
+            planeOne.style.width = `50px`;
+
+            updateSatTwoOrbitDistance(-1600);
+            satelliteTwoWrapper.style.transform = `translate(685px, -170px)`;
+            satelliteTwo.style.width = `250px`;
         }
 
         // Apply transformations and size changes
@@ -562,16 +586,34 @@ document.addEventListener('DOMContentLoaded', function () {
         isExpanded = !isExpanded;
     }
 
+    // ------------------------------ orbits ------------------------------
+
     document.querySelector(".earth-exp").addEventListener("click", function () {
         rotateEarth();
     });
 
-    function updateOrbitDistanceOne(distance) {
+    function updateSatOneOrbitDistance(distance) {
         satelliteOne.style.setProperty('--orbit-distance', `${Math.abs(distance)}px`);
     }
-    
-    updateOrbitDistanceOne(-1650);
-    solar.style.transform = `translate(700px, -70px)`;
+
+    updateSatOneOrbitDistance(-1650);
+    satelliteOneWrapper.style.transform = `translate(700px, -170px)`;
     satelliteOne.style.width = `250px`;
+
+    function updatePlaneOneDistance(distance) {
+        planeOne.style.setProperty('--orbit-distance', `${Math.abs(distance)}px`);
+    }
+
+    updatePlaneOneDistance(-820);
+    planeOneWrapper.style.transform = `translate(730px, 0px)`;
+    planeOne.style.width = `50px`;
+
+    function updateSatTwoOrbitDistance(distance) {
+        satelliteTwo.style.setProperty('--orbit-distance', `${Math.abs(distance)}px`);
+    }
+
+    updateSatTwoOrbitDistance(-1600);
+    satelliteTwoWrapper.style.transform = `translate(685px, -170px)`;
+    satelliteTwo.style.width = `250px`;
 
 });

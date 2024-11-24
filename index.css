@@ -137,7 +137,7 @@ h1 {
     height: 100%;
 }
 
-.solar {
+.satellite-one-wrapper {
     position: absolute;
     transform: translate(-440px, -70px);
     z-index: 90;
@@ -148,21 +148,78 @@ h1 {
     font-size: 50px;
     width: 50px;
     height: auto;
-    animation: orbit 30s linear infinite;
+    animation: orbit 50s linear infinite;
     transform-origin: center center;
-    z-index: 90;
 }
 
 .satellite-one img {
     width: 100%;
+    transform: rotate(45deg);
 }
 
 @keyframes orbit {
     0% {
-        transform: rotate(0deg) translateX(var(--orbit-distance)) rotate(0deg);
+        transform: rotate(0deg) translateX(var(--orbit-distance));
     }
     100% {
-        transform: rotate(360deg) translateX(var(--orbit-distance)) rotate(-360deg);
+        transform: rotate(360deg) translateX(var(--orbit-distance));
+    }
+}
+
+.plane-one-wrapper {
+    position: absolute;
+    transform: translate(-400px, 0px);
+    z-index: 90;
+}
+
+.plane-one {
+    font-size: 50px;
+    width: 50px;
+    height: auto;
+    animation: orbit-plane 40s linear infinite;
+    transform-origin: center center;
+}
+
+.plane-one img {
+    width: 100%;
+    transform: rotate(-45deg);
+}
+
+@keyframes orbit-plane {
+    0% {
+        transform: rotate(360deg) translateX(var(--orbit-distance));
+    }
+    100% {
+        transform: rotate(0deg) translateX(var(--orbit-distance));
+    }
+}
+
+.satellite-two-wrapper {
+    position: absolute;
+    transform: translate(-440px, -70px);
+    z-index: 91;
+}
+
+.satellite-two {
+    position: absolute;
+    font-size: 50px;
+    width: 50px;
+    height: auto;
+    animation: orbit-two 30s linear infinite;
+    transform-origin: center center;
+}
+
+.satellite-two img {
+    width: 100%;
+    transform: rotate(55deg);
+}
+
+@keyframes orbit-two {
+    0% {
+        transform: rotate(0deg) translateX(var(--orbit-distance));
+    }
+    100% {
+        transform: rotate(360deg) translateX(var(--orbit-distance));
     }
 }
 
@@ -757,14 +814,19 @@ h1 {
 
 .oneko-toggle {
     padding: 0px;
-    background: linear-gradient(to bottom right, rgb(255, 0, 127), rgb(0, 0, 0));
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(0, 0, 0));
     color: transparent;
     background-clip: text;
     font-size: 20px;
     width: auto;
+    border: 1px solid #000000;
+    border-radius: 5px;
 }
 
 .oneko-toggle:hover {
+    background: linear-gradient(to bottom right, rgb(255, 0, 127), rgb(0, 0, 0));
+    color: transparent;
+    background-clip: text;
     transform: scale(1.1);
 }
 
@@ -773,7 +835,7 @@ h1 {
     gap: 5px;
     position: fixed;
     top: 106px;
-    left: 12px;
+    left: 42px;
     z-index: 110;
     max-width: 38%;
 }
